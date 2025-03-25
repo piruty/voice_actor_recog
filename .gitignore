@@ -7,3 +7,4 @@ voice/*
 *.mp4
 .ipynb_checkpoints/
 files/*
+data/
