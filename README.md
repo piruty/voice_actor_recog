@@ -43,6 +43,21 @@ python src/predict.py --input <audio_file>
 
 ## データセット
 
+kaggleに登録されている日本人話者データセットを使用
+https://www.kaggle.com/datasets/nguyenthanhlim/japanese-non-verbal-verbal-voice-jvnv/data
+これをvoiceディレクトリに保存し、以下のコマンドを実行してdataディレクトリ内に音声データを移動する
+
+```bash
+# 話者用のディレクトリを作成
+mkdir -p data/speaker1 data/speaker2 data/speaker3 data/speaker4
+
+# 音声ファイルをコピー
+find voice/jvnv_v1/F1 -name "*.wav" -type f -exec cp {} data/speaker1/ \;
+find voice/jvnv_v1/F2 -name "*.wav" -type f -exec cp {} data/speaker2/ \;
+find voice/jvnv_v1/M1 -name "*.wav" -type f -exec cp {} data/speaker3/ \;
+find voice/jvnv_v1/M2 -name "*.wav" -type f -exec cp {} data/speaker4/ \;
+```
+
 `data/` ディレクトリには以下の話者のデータが含まれています:
 - speaker1
 - speaker2
